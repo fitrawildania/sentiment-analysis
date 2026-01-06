@@ -33,13 +33,13 @@ st.divider()
 st.subheader("📝 Uji Kalimat")
 text = st.text_area("Masukkan ulasan:")
 
-if st.button("Prediksi Sentimen"):
+if st.button("Hasil Sentimen"):
     if text.strip() == "":
         st.warning("Teks tidak boleh kosong")
     else:
         vec = tfidf.transform([text])
         pred = model.predict(vec)[0]
-        st.success(f"Prediksi Sentimen: **{label_map[pred]}**")
+        st.success(f"Hasil Sentimen: **{pred}**")
 
 st.divider()
 
